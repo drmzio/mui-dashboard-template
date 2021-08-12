@@ -17,6 +17,10 @@ export const theme = createTheme({
       '"Segoe UI Emoji"',
       '"Segoe UI Symbol"',
     ].join(','),
+    h1: { fontWeight: 600 },
+    h2: { fontWeight: 600 },
+    h3: { fontWeight: 600 },
+    h4: { fontWeight: 600 },
   },
   components: {
     MuiCssBaseline: {
@@ -38,6 +42,20 @@ export const theme = createTheme({
         primary: {
           fontSize: defaultTheme.typography.pxToRem(15),
           fontWeight: 500
+        }
+      }
+    },
+    MuiAppBar: {
+      styleOverrides: {
+        colorDefault: {
+          backgroundColor: defaultTheme.palette.background.paper,
+        }
+      }
+    },
+    MuiButton: {
+      styleOverrides: {
+        root: {
+          textTransform: 'none',
         }
       }
     }
