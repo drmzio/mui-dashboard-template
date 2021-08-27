@@ -58,6 +58,21 @@ export const theme = createTheme({
           textTransform: 'none',
         }
       }
+    },
+    MuiTooltip: {
+      defaultProps: {
+        placement: 'top',
+        arrow: true
+      }
+    },
+    MuiContainer: {
+      styleOverrides: {
+        maxWidthLg: {
+          [defaultTheme.breakpoints.up('lg')]: {
+            maxWidth: 1000
+          }
+        }
+      }
     }
   }
 });
