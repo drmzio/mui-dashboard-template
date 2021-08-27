@@ -14,7 +14,7 @@ import {
   ListItemAvatar,
   Avatar,
   InputBase,
-  InputAdornment, Typography, Stack, Button, Container, useMediaQuery, Paper
+  InputAdornment, Typography, Stack, Button, Container, useMediaQuery, Paper, Link, ListItemButton, TextField, MenuItem
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { Theme } from '@material-ui/core';
@@ -33,6 +33,8 @@ import VisibilityIcon from '@material-ui/icons/Visibility';
 import ColorLensIcon from '@material-ui/icons/ColorLens';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ExpandMore from '@material-ui/icons/ExpandMore';
+import OrgSelection from './components/OrgSelection';
 
 const drawerWidth = 240;
 
@@ -73,14 +75,17 @@ function App() {
         onClose={() => setOpen(false)}
         className={classes.drawer}
       >
-        <AppBar position="static" color="transparent" elevation={0}>
-          <Toolbar>
-            <a href="/">
-              <img src="https://tailwindui.com/img/logos/easywire-logo-purple-600-mark-gray-900-text.svg" alt="" />
-            </a>
+        <AppBar position="relative" color="transparent" elevation={0} sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}>
+          <Toolbar sx={{ px: { sm: 2 } }}>
+            <Link href="/" style={{ width: 151, height: 30, display: 'block' }}>
+              <img src={`/logo.svg`} width={151} height={30} alt="Logo" />
+            </Link>
           </Toolbar>
         </AppBar>
         <Box sx={{ flexGrow: 1 }}>
+          <Box sx={{ px: 2, pt: 2 }}>
+            <OrgSelection />
+          </Box>
           <List component="nav">
             <Box sx={{ position: 'relative' }}>
               <ListItem button>
@@ -138,18 +143,9 @@ function App() {
               <ListItemText primary="Help" />
             </ListItem>
           </List>
-          <Divider />
-          <List component="div">
-            <ListItem button>
-              <ListItemAvatar>
-                <Avatar src="https://next.material-ui.com/static/images/avatar/2.jpg" />
-              </ListItemAvatar>
-              <ListItemText primary="Daniel Ramirez" secondary="Acme, Inc." />
-            </ListItem>
-          </List>
         </Box>
       </Drawer>
-      <AppBar color="default" elevation={0} sx={{ borderBottom: '1px solid transparent', borderColor: 'divider' }}>
+      <AppBar color="default" elevation={0} sx={{ borderBottom: (theme) => `1px solid ${theme.palette.divider}` }}>
         <Toolbar className={classes.toolbar}>
           <Box sx={{ mr: 1, display: { xs: 'block', sm: 'none' } }}>
             <IconButton size="large" edge="start" color="inherit" onClick={() => setOpen(!open)}>
@@ -157,9 +153,9 @@ function App() {
             </IconButton>
           </Box>
           <Box sx={{ display: { xs: 'block', sm: 'none' } }}>
-            <a href="/">
-              <img src="https://tailwindui.com/img/logos/easywire-logo-purple-600-mark-gray-900-text.svg" alt="" />
-            </a>
+            <Link href="/" style={{ width: 151, height: 30, display: 'block' }}>
+              <img src={`/logo.svg`} width={151} height={30} alt="Logo" />
+            </Link>
           </Box>
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             <InputBase
@@ -171,12 +167,22 @@ function App() {
               }
             />
           </Box>
+          <Box sx={{ flexGrow: 1 }} />
+          <Box sx={{ mr: -1 }}>
+            <ListItemButton dense sx={{ p: 0 }}>
+              <ListItemAvatar sx={{ mr: { xs: 0, sm: 1.5 } }} style={{ minWidth: 0 }}>
+                <Avatar src="https://next.material-ui.com/static/images/avatar/2.jpg" />
+              </ListItemAvatar>
+              <ListItemText primary="Daniel Ramirez" secondary="Acme, Inc." sx={{ my: 0, mr: 1, display: { xs: 'none', md: 'block' } }} />
+              <ExpandMore fontSize="small" sx={{ color: (theme) => theme.palette.text.secondary }} />
+            </ListItemButton>
+          </Box>
         </Toolbar>
       </AppBar>
       <main className={classes.main}>
         <Toolbar />
         <Box sx={{ flexGrow: 1, py: 3 }}>
-          <Container maxWidth="md">
+          <Container maxWidth="lg">
             <Stack direction="row" spacing={1} sx={{ mb: 2 }}>
               <Button color="inherit" startIcon={<ChevronLeftIcon />} sx={{ color: 'text.secondary' }}>
                 Back to Products
