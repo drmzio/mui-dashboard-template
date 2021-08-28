@@ -35,6 +35,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import OrgSelection from './components/OrgSelection';
+import ProfileDropdown from './components/ProfileDropdown';
 
 const drawerWidth = 240;
 
@@ -169,13 +170,7 @@ function App() {
           </Box>
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ mr: -1 }}>
-            <ListItemButton dense sx={{ p: 0 }}>
-              <ListItemAvatar sx={{ mr: { xs: 0, sm: 1.5 } }} style={{ minWidth: 0 }}>
-                <Avatar src="https://next.material-ui.com/static/images/avatar/2.jpg" />
-              </ListItemAvatar>
-              <ListItemText primary="Daniel Ramirez" secondary="Acme, Inc." sx={{ my: 0, mr: 1, display: { xs: 'none', md: 'block' } }} />
-              <ExpandMore fontSize="small" sx={{ color: (theme) => theme.palette.text.secondary }} />
-            </ListItemButton>
+            <ProfileDropdown />
           </Box>
         </Toolbar>
       </AppBar>
