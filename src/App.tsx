@@ -1,39 +1,25 @@
 import React, { useState } from 'react';
+import { makeStyles } from '@mui/styles';
+import { Theme } from '@mui/material/styles';
 import {
-  Drawer,
-  List,
-  ListItem,
-  ListItemIcon,
-  ListItemText,
-  Box,
-  Toolbar,
-  AppBar,
-  IconButton,
-  Tooltip,
-  Divider,
-  ListItemAvatar,
-  Avatar,
-  InputBase,
-  InputAdornment, Typography, Stack, Button, Container, useMediaQuery, Paper, Link, ListItemButton, TextField, MenuItem
-} from '@material-ui/core';
-import { makeStyles } from '@material-ui/styles';
-import { Theme } from '@material-ui/core';
+  Drawer, List, ListItem, ListItemIcon, ListItemText, Box, Toolbar, AppBar, IconButton, Tooltip, InputBase,
+  InputAdornment, Typography, Stack, Button, Container, useMediaQuery, Paper, Link
+} from '@mui/material';
 
-import SettingsOutlinedIcon from '@material-ui/icons/SettingsOutlined';
-import HelpOutlineOutlinedIcon from '@material-ui/icons/HelpOutlineOutlined';
-import AccountCircleOutlinedIcon from '@material-ui/icons/AccountCircleOutlined';
-import LocalOfferOutlinedIcon from '@material-ui/icons/LocalOfferOutlined';
-import StorefrontOutlinedIcon from '@material-ui/icons/StorefrontOutlined';
-import DesktopWindowsOutlinedIcon from '@material-ui/icons/DesktopWindowsOutlined';
-import WifiTetheringOutlinedIcon from '@material-ui/icons/WifiTetheringOutlined';
-import VisibilityOutlinedIcon from '@material-ui/icons/VisibilityOutlined';
-import SearchIcon from '@material-ui/icons/Search';
-import CreateIcon from '@material-ui/icons/Create';
-import VisibilityIcon from '@material-ui/icons/Visibility';
-import ColorLensIcon from '@material-ui/icons/ColorLens';
-import MenuIcon from '@material-ui/icons/Menu';
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ExpandMore from '@material-ui/icons/ExpandMore';
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+import HelpOutlineOutlinedIcon from '@mui/icons-material/HelpOutlineOutlined';
+import AccountCircleOutlinedIcon from '@mui/icons-material/AccountCircleOutlined';
+import LocalOfferOutlinedIcon from '@mui/icons-material/LocalOfferOutlined';
+import StorefrontOutlinedIcon from '@mui/icons-material/StorefrontOutlined';
+import DesktopWindowsOutlinedIcon from '@mui/icons-material/DesktopWindowsOutlined';
+import WifiTetheringOutlinedIcon from '@mui/icons-material/WifiTetheringOutlined';
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined';
+import SearchIcon from '@mui/icons-material/Search';
+import CreateIcon from '@mui/icons-material/Create';
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import ColorLensIcon from '@mui/icons-material/ColorLens';
+import MenuIcon from '@mui/icons-material/Menu';
+import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import OrgSelection from './components/OrgSelection';
 import ProfileDropdown from './components/ProfileDropdown';
 

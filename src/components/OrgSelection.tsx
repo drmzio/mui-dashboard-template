@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { MenuItem, TextField } from '@material-ui/core';
+import { MenuItem, TextField } from '@mui/material';
 
 export default function OrgSelection() {
   const [org, setOrg] = useState('acme');

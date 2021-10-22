@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Avatar, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem } from '@material-ui/core';
-import ExpandIcon from '@material-ui/icons/ExpandMore';
-import SettingsIcon from '@material-ui/icons/Settings';
-import LogoutIcon from '@material-ui/icons/Logout';
+import { Avatar, ListItemAvatar, ListItemButton, ListItemIcon, ListItemText, Menu, MenuItem } from '@mui/material';
+import ExpandIcon from '@mui/icons-material/ExpandMore';
+import SettingsIcon from '@mui/icons-material/Settings';
+import LogoutIcon from '@mui/icons-material/Logout';
 
 export default function ProfileDropdown() {
   const [anchorEl, setAnchorEl] = useState<null|HTMLElement>(null);
